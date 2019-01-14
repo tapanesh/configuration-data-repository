@@ -24,7 +24,10 @@ words: a,the
 spring:
   profiles: adjective
 words: reasonable,leaky,suspicious,ordinary,unlikely
-
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8011/eureka/
 ---
 spring:
   profiles: noun
