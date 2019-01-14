@@ -1,34 +1,13 @@
 ---
-# Items that apply to ALL profiles:
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8011/eureka/
----
-
 spring:
-  profiles: subject
-words: I1,You1,He1,She1,It1
-
----
-spring:
-  profiles: verb
-words: ran,knew,had,saw,bought
-
----
-spring:
-  profiles: article
-words: a,the
-
----
-spring:
-  profiles: adjective
-words: reasonable,leaky,suspicious,ordinary,unlikely
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8011/eureka/
----
-spring:
-  profiles: noun
-words: boat,book,vote,seat,backpack,partition,groundhog
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/kennyk65/Microservices-With-Spring-Student-Files
+          searchPaths: ConfigData
+        # "native" is used when the native profile is active, for local tests with a classpath repo:
+        native:
+          searchLocations: classpath:offline-repository/
+server:
+  port: 8001
